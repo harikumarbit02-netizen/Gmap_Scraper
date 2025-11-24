@@ -8,9 +8,7 @@ SECRET_KEY = 'django-insecure-0-k^*n=zzpl#8=n9_b^)djrzg&w49z)u9d59(psu*ncq8m+he4
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    ".vercel.app",
-    "localhost",
-    ".railway.app",
+"*"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
