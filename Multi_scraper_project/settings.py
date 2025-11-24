@@ -76,14 +76,11 @@ SESSION_COOKIE_HTTPONLY = True  # Prevent JavaScript access to session cookie
 SESSION_COOKIE_SAMESITE = 'Lax'  # CSRF protection
 
 
-import dj_database_url
-
 DATABASES = {
-    'default': dj_database_url.parse(
-        "postgresql://postgres.ejiodkrqvtimkxwytnsr:HariKumar%4018@aws-1-ap-southeast-2.pooler.supabase.com:5432/postgres",
-        conn_max_age=600,
-        ssl_require=True
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
