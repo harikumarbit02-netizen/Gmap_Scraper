@@ -1,1 +1,1 @@
-web: gunicorn Multi_Scraper_project.wsgi
+web: gunicorn Multi_scraper_project.wsgi
