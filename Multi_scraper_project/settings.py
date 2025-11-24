@@ -7,7 +7,16 @@ SECRET_KEY = 'django-insecure-0-k^*n=zzpl#8=n9_b^)djrzg&w49z)u9d59(psu*ncq8m+he4
 
 DEBUG = False
 
-ALLOWED_HOSTS = [".vercel.app", "localhost", ]
+ALLOWED_HOSTS = [
+    ".onrender.com",
+    "localhost",
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://*.onrender.com'
+]
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -22,13 +31,13 @@ LOGIN_REDIRECT_URL = '/'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'scraper.middleware.NoCacheMiddleware',  # Add this
 ]
 
@@ -38,7 +47,6 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 CSRF_COOKIE_SECURE = False
 SESSION_COOKIE_SECURE = False
-CSRF_TRUSTED_ORIGINS = ['https://scraper.onrender.com']
 
 ROOT_URLCONF = 'Multi_scraper_project.urls'
 
